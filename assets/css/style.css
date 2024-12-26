@@ -1723,199 +1723,127 @@ iframe{
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.timeline .section-title h2 {
+  font-size: 16px;
+  color: #95a5a6;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.timeline .section-title p {
+  font-size: 36px;
+  color: #0b2341;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* Timeline List */
 .timeline ul {
-  padding: 50px 0;
-}
-
-.timeline ul li {
-  list-style-type: none;
+  list-style: none;
+  padding: 0;
   position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 50px;
-  background: rgb(153, 153, 153);
 }
 
-.timeline ul li::after {
-  content: "";
+/* Individual Item */
+.timeline ul li {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 60px; /* Adjusted to align with time indicator */
+}
+
+/* Timeline Item Content */
+.timeline ul li div {
+background: linear-gradient(to right, #fa471f, #ed512ed8);/* Dark grey background for content */
+  color: #ffffff; /* White text */
+  padding: 20px 30px; /* Add padding to create space inside the box */
+  border-radius: 20px;
+  box-shadow:  20px 20px 41px #bebebe,
+  -20px -20px 41px #ffffff;/* Shadow for the box */
+  margin-left: 30%; /* Create space between the time indicator and content */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px) scale(0.8); /* Start slightly below and smaller */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Animation for fade-in and pop effect */
+  margin-bottom: 60px;
+  display: flex; /* Use flex to center the content inside the box */
+  justify-content: center; /* Align content horizontally */
+  align-items: center; /* Align content vertically */
+  height: 100px; /* Set a height for the box */
+  width: 50%; /* Make the box take the full width of its container */
+  text-align: center; /* Ensure the content is centered inside the box */
+ margin-top: 7%;
+}
+
+/* Time Indicator */
+.timeline ul li time {
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
+  top: 50%;
+  left: 0;
+  transform: translate(-70%, -50%);
+  background: #2c3e50;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
   border-radius: 50%;
-  background: inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
-.timeline ul li div {
-  position: relative;
-  bottom: 0;
-  width: 400px;
-  padding: 15px;
-  background: #ed502e;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-.timeline ul li div::before {
-  content: "";
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.timeline ul li:nth-child(odd) div {
-  left: 45px;
-}
-
-.timeline ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #ed502e transparent transparent;
-}
-
-.timeline ul li:nth-child(even) div {
-  left: -439px;
-}
-
-.timeline ul li:nth-child(even) div::before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #ed502e;
-}
-
-time {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-
-/* EFFECTS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.timeline ul li::after {
-  transition: background 0.5s ease-in-out;
-}
-
-.timeline ul li.in-view::after {
-  background: #ed502e;
-}
-
-.timeline ul li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.timeline ul li:nth-child(odd) div {
-  transform: translate3d(200px, 0, 0);
-}
-
-.timeline ul li:nth-child(even) div {
-  transform: translate3d(-200px, 0, 0);
-}
-
-.timeline ul li.in-view div {
-  transform: none;
-  visibility: visible;
-  color: whitesmoke;
-  text-align: justify;
+/* Hover-like Effect on Scroll */
+.timeline ul li div.is-visible {
   opacity: 1;
+  transform: translateY(0) scale(1.05); /* Scale up and reset vertical shift */
 }
 
-
-/* GENERAL MEDIA QUERIES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-@media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .timeline {
+    padding: 40px 20px;
   }
-  .timeline ul li:nth-child(even) div {
-    left: -289px;
-    /*250+45-6*/
-  }
-}
 
-@media screen and (max-width: 600px) {
   .timeline ul li {
-    margin-left: 20px;
+    padding-left: 60px;
   }
+
+  .timeline ul li time {
+    transform: translate(-50%, -50%);
+    left: 0;
+  }
+
+  .timeline .section-title h2 {
+    font-size: 30px;
+  }
+
+  .timeline .section-title p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline {
+    padding: 30px 10px;
+  }
+
+  .timeline ul li {
+    padding-left: 50px;
+  }
+
+  .timeline ul li time {
+    transform: translate(-50%, -50%);
+    left: 0;
+  }
+
+  .timeline .section-title h2 {
+    font-size: 24px;
+  }
+
+  .timeline .section-title p {
+    font-size: 14px;
+  }
+
   .timeline ul li div {
-    width: calc(100vw - 91px);
-  }
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #ed502e transparent transparent;
-  }
-}
-
-
-/* EXTRA/CLIP PATH STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.timeline-clippy ul li::after {
-  width: 40px;
-  height: 40px;
-  border-radius: 0;
-}
-
-.timeline-rhombus ul li::after {
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
-
-.timeline-rhombus ul li div::before {
-  bottom: 12px;
-}
-
-.timeline-star ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-}
-
-.timeline-heptagon ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    90% 20%,
-    100% 60%,
-    75% 100%,
-    25% 100%,
-    0% 60%,
-    10% 20%
-  );
-}
-
-.timeline-infinite ul li::after {
-  animation: scaleAnimation 2s infinite;
-}
-
-@keyframes scaleAnimation {
-  0% {
-    transform: translateX(-50%) scale(1);
-  }
-  50% {
-    transform: translateX(-50%) scale(1.25);
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
+    font-size: 14px;
+    padding: 12px 15px;
   }
 }
 
