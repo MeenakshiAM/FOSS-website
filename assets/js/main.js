@@ -32,7 +32,19 @@
       }
     }
   }
+window.addEventListener('scroll', function() {
+  const timelineItems = document.querySelectorAll('.timeline ul li div');
 
+  timelineItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      item.classList.add('is-visible');
+    }
+  });
+});
+
+// Initial trigger to check visibility of items on page load
+window.dispatchEvent(new Event('scroll'));
   /**
    * Easy on scroll event listener 
    */
