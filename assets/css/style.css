@@ -1198,7 +1198,7 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
-.team .row .card{
+.team .row  .card{
   height:120px;
   width:350px;
   padding: 10px;
