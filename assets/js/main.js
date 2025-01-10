@@ -183,6 +183,18 @@ window.dispatchEvent(new Event('scroll'));
   /**
    * Hero carousel indicators
    */
+
+  
+  /*the animated lines code*/
+  var typed = new Typed(".text", {
+    strings: ["Explore the open source", "Hi LBTIANS", "Grow with us"],
+    typeSpeed: 100, 
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+});
+
+
   let heroCarouselIndicators = select("#hero-carousel-indicators")
   let heroCarouselItems = select('#heroCarousel .carousel-item', true)
 
