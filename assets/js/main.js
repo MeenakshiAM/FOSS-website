@@ -187,8 +187,8 @@ window.dispatchEvent(new Event('scroll'));
   
   /*the animated lines code*/
   var typed = new Typed(".text", {
-    strings: ["Explore the open source", "Hi LBTIANS", "Grow with us"],
-    typeSpeed: 100, 
+    strings: ["Build, Share, Inspire", "Hi LBTIANS!", "Open Source, Open Minds, Open Opportunities", "Be the change with FOSS", "Think Freely, Code Openly"],
+    typeSpeed: 70, 
     backSpeed: 100,
     backDelay: 1000,
     loop: true
