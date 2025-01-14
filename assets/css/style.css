@@ -400,12 +400,23 @@ h1, h2, h3, h4, h5, h6 {
 #hero .text {
   color: #ed502e;
 }
+
+
+#hero h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+
 #hero p {
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
   color: #2e2c3b;
   margin-top: 10px;
 }
+
 /* Here is the button animation*/
 @keyframes enlargeShrink {
   0% {
@@ -1912,6 +1923,7 @@ background: linear-gradient(to right, #fa471f, #ed512ed8);/* Dark grey backgroun
 .card{
   box-shadow: rgb(199, 197, 197) 0px 5px 12px 7px;
 }
+
 .card-link {
   text-decoration: none; /* Remove underline from the link */
   color: inherit; /* Inherit text color */
