@@ -1950,3 +1950,15 @@ iframe{
   color: inherit; /* Inherit text color */
   display: block; /* Make the link behave like a block element */
 }
+/* RERERENCES SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#fossreferences a {
+  color: #008e74; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+#fossreferences a:hover {
+  color: #fff; 
+  text-decoration: underline; 
+}
