@@ -406,12 +406,23 @@ h1, h2, h3, h4, h5, h6 {
 #hero .text {
   color: #00ffff;
 }
+
+
+#hero h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+
 #hero p {
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
   color: #d3d3d3;
   margin-top: 10px;
 }
+
 /* Here is the button animation*/
 @keyframes enlargeShrink {
   0% {
@@ -1933,6 +1944,7 @@ iframe{
 .card{
   box-shadow: #008e74 5px 5px 5px 5px;
 }
+
 .card-link {
   text-decoration: none; /* Remove underline from the link */
   color: inherit; /* Inherit text color */
